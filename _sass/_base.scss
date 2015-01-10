@@ -68,12 +68,11 @@ textarea:focus, input:focus, button:focus{
 #find_button {
   width: 100%;
   padding: 16px 0;
-  margin-bottom: 50px;
 }
 
 .tip {
   color: #999;
-  margin: 13px 0 20px 0;
+  margin: 20px 0 60px 0;
 }
 
 .inner-icon {
@@ -188,7 +187,7 @@ footer {
   }
 
   #share-buttons {
-    width: $main-width;
+    max-width: $main-width;
     padding: 30px;
     background-color: #fff;
     border: 1px solid #eee;
