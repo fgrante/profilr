@@ -132,13 +132,17 @@ textarea:focus, input:focus, button:focus{
       color: #333;
     }
 
+    .fa-clock-o {
+      color: #aaa;
+    }
+
     .el-icon-viadeo {
       color: #ec7500;
     }
   }
 }
 
-#selected-social .social {
+#selected-social .social, #selected-date .social {
   font-size: 1em;
   padding-left: 5px !important;
 }
@@ -159,6 +163,25 @@ textarea:focus, input:focus, button:focus{
     margin-left: 5px;
     color: #888;
   }
+}
+
+.advanced_options_link {
+  margin: 20px 0;
+  text-align: left;
+
+  a {
+  color: #aaa;
+  text-decoration: underline;
+  font-size: 1.2em;
+
+    &:hover {
+      color: #999;
+    }
+  }
+}
+
+#advanced_options {
+  display: none;
 }
 
 .link-input {

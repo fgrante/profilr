@@ -5,19 +5,29 @@ $ ->
   $("#main_form").submit ->
 
     if window.social == 'linkedin'
-      link = 'https://google.com/search?q=-intitle:&quot;profiles&quot; -inurl:&quot;dir/ &quot; site:linkedin.com/in/ OR site:linkedin.com/pub/ '+$("#job_input").val()+' &quot;'+$("#company_input").val()+'&quot; &quot;'+$("#location_input").val()+'&quot;&num=100&pws=0'
+      query = '-intitle:&quot;profiles&quot; -inurl:&quot;dir/ &quot; site:linkedin.com/in/ OR site:linkedin.com/pub/ '+$("#job_input").val()+' &quot;'+$("#company_input").val()+'&quot; &quot;'+$("#location_input").val()+'&quot;'
 
     else if window.social == 'google-plus'
-      link = 'https://google.com/search?q=site:plus.google.com  &quot;lives * '+$("#location_input").val()+'&quot; &quot;work at '+$("#company_input").val()+'&quot; -intext:&quot;Contact Information&quot; inurl:about '+$("#job_input").val()+'&num=100&pws=0'
+      query = 'site:plus.google.com  &quot;lives * '+$("#location_input").val()+'&quot; &quot;work at '+$("#company_input").val()+'&quot; -intext:&quot;Contact Information&quot; inurl:about '+$("#job_input").val()
 
     else if window.social == 'twitter'
-      link = 'https://google.com/search?q=-inurl:(search|favorites|status|statuses|jobs|lists|media) site:twitter.com -intitle:&quot;'+$("#company_input").val()+'&quot; -intitle:&quot;'+$("#location_input").val()+'&quot; '+$("#job_input").val()+' &quot;'+$("#company_input").val()+'&quot; &quot;'+$("#location_input").val()+'&quot;&num=100&pws=0'
+      query = '-inurl:(search|favorites|status|statuses|jobs|lists|media) site:twitter.com -intitle:&quot;'+$("#company_input").val()+'&quot; -intitle:&quot;'+$("#location_input").val()+'&quot; '+$("#job_input").val()+' &quot;'+$("#company_input").val()+'&quot; &quot;'+$("#location_input").val()
 
     else if window.social == 'viadeo'
-      link = 'https://google.com/search?q=site:viadeo.com/*/profile/ '+$("#job_input").val()+' intitle:&quot;'+$("#company_input").val()+'&quot; &quot;'+$("#location_input").val()+'&quot; &num=100&pws=0'
+      query = 'site:viadeo.com/*/profile/ '+$("#job_input").val()+' intitle:&quot;'+$("#company_input").val()+'&quot; &quot;'+$("#location_input").val()+'&quot;'
 
     else if window.social == 'github'
-      link = 'https://google.com/search?q=site:github.com intext:&quot;joined on&quot; -intitle:&quot;at master&quot; -inurl:(tab|jobs|articles) '+$("#job_input").val()+' '+$("#company_input").val()+' &quot;'+$("#location_input").val()+'&quot;&num=100&pws=0'
+      query = 'site:github.com intext:&quot;joined on&quot; -intitle:&quot;at master&quot; -inurl:(tab|jobs|articles) '+$("#job_input").val()+' '+$("#company_input").val()+' &quot;'+$("#location_input").val()+'&quot;'
+
+    excluded_words = '-'+$("#exclude_input").val().split(" ").join(" -")
+
+    if window.date != 'undefined'
+      date = '&tbs='+window.date
+    else
+      date = ''
+
+    link = 'https://google.com/search?q='+query+' '+excluded_words+'&num=100&pws=0'+date
+
 
     $("#result1").html('
       <div class="form-group">
@@ -85,6 +95,34 @@ $ ->
     $('#selected-social').html('<span class="social"><i class="fa fa-github"></i>Github</span>')
     window.social = 'github'
 
+
+window.date = 'undefined'
+
+$ ->
+  $('#choose-no-date').click ->
+    $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Date indifférente</span>')
+    window.date = 'undefined'
+
+  $('#choose-day').click ->
+    $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Moins de 24 heures</span>')
+    window.date = 'qdr:d'
+
+  $('#choose-week').click ->
+    $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Moins d\'une semaine</span>')
+    window.date = 'qdr:w'
+
+  $('#choose-month').click ->
+    $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Moins d\'un mois</span>')
+    window.date = 'qdr:m'
+
+  $('#choose-year').click ->
+    $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Moins d\'un an</span>')
+    window.date = 'qdr:y'
+
+
+$ ->
+  $(".advanced_options_link a").click ->
+    $("#advanced_options").slideToggle()
 
 $ ->
   $("#open-share-buttons").click ->
