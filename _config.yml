@@ -1,9 +1,9 @@
 # Site settings
 title: Profilr
 email: francois@firmapi.com
-description: "Trouver les meilleurs profils"
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://fgrante.github.io/profilr/" # the base hostname & protocol for your site
+description: Trouver les meilleurs profils
+baseurl:
+url: http://fgrante.github.io/profilr
 twitter_username: fgrante
 github_username:  fgrante
 
