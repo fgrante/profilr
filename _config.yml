@@ -1,9 +1,9 @@
 # Site settings
 title: Profilr
 email: francois@firmapi.com
-description: Trouver les meilleurs profils
+description: Find the best profiles on social networks instantly
 baseurl:
-url: http://fgrante.github.io/profilr
+url: https://profilr.co
 twitter_username: fgrante
 github_username:  fgrante
 
