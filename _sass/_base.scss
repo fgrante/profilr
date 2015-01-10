@@ -166,3 +166,18 @@ textarea:focus, input:focus, button:focus{
 .link-input {
   color: #777;
 }
+
+footer {
+  font-size: 1.3em;
+  color: #666;
+
+  a {
+    color: #3699ee;
+
+    &:hover {
+      color: #3699ee;
+      border-bottom: 1px solid #3699ee;
+      text-decoration: none;
+    }
+  }
+}
