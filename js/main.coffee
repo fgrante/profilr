@@ -84,3 +84,7 @@ $ ->
     $('#selected-social').html('<span class="social"><i class="fa fa-github"></i>Github</span>')
     window.social = 'github'
 
+
+$ ->
+  $("#open-share-buttons").click ->
+    $("#share-buttons").slideToggle()

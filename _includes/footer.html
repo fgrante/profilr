@@ -1,3 +1,33 @@
 <footer>
   Créé par <a href="https://firmapi.com" target="_blank">Firmapi</a>. Des feedbacks ? <a href="mailto:bonjour@firmapi.com">bonjour@firmapi.com</a>
+  <br/>
+  <div id="share-buttons">
+    <div class="share-button">
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=785120568217551&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+      <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="box_count"></div>
+    </div>
+
+    <div class="share-button">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="_Firmapi" data-related="_Firmapi">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+
+    <div class="share-button">
+      <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+      <script type="IN/Share" data-counter="top"></script>
+    </div>
+
+    <div class="share-button">
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <div class="g-plus" data-action="share" data-annotation="vertical-bubble" data-height="60"></div>
+    </div>
+  </div>
+  <button class="btn btn-warning btn-lg" id="open-share-buttons">Partager</button>
 </footer>
