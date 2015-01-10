@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+<div class="container">
+  <form id="main_form">
+    <div class="form-group">
+      <div class="inner-icon">
+        <i class="fa fa-briefcase"></i>
+        <input type="text" class="form-control input-lg" autofocus="autofocus" id="job_input" placeholder="Poste ou compétence">
+      </div>
+      <div class="tip">Astuce : utilisez le séparateur OR pour rechercher plusieurs alternatives.</div>
+    </div>
+    <div class="form-group">
+      <div class="inner-icon">
+        <i class="fa fa-building-o"></i>
+        <input type="text" class="form-control input-lg" id="company_input" placeholder="Entreprise">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="inner-icon">
+        <i class="fa fa-map-marker"></i>
+        <input type="text" class="form-control input-lg" id="localisation_input" placeholder="Localisation">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="dropdown">
+        <button id="choose-social" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-default btn-lg">
+          <span id="selected-social"><span class="social"><i class="fa fa-linkedin"></i>LinkedIn</span></span>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="choose-social">
+          <li>
+            <a href="#" class="social" id="choose-linkedin">
+              <i class="fa fa-linkedin"></i>
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social" id="choose-google-plus">
+              <i class="fa fa-google-plus"></i>
+              Google+
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social" id="choose-viadeo">
+              <i class="el-icon-viadeo"></i>
+              Viadeo
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social" id="choose-twitter">
+              <i class="fa fa-twitter"></i>
+              Twitter
+            </a>
+          </li>
+          <li>
+            <a href="#" class="social" id="choose-github">
+              <i class="fa fa-github"></i>
+              Github
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg" id="find_button">Rechercher les profils</button>
+    <div id="result1"></div>
+    <div id="result2"></div>
+  </form>
+</div>
