@@ -4,8 +4,7 @@ email: francois@firmapi.com
 description: Find the best profiles on social networks instantly
 baseurl:
 url: https://profilr.co
-twitter_username: fgrante
-github_username:  fgrante
+twitter_username: _Firmapi
 
 # Build settings
 markdown: kramdown
