@@ -11,7 +11,7 @@
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=785120568217551&version=v2.0";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));</script>
-      <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="box_count"></div>
+      <div class="fb-share-button" data-href="{{ site.url }}" data-layout="box_count"></div>
     </div>
 
     <div class="share-button">
@@ -25,8 +25,10 @@
     </div>
 
     <div class="share-button">
-      <script src="https://apis.google.com/js/platform.js" async defer></script>
-      <div class="g-plus" data-action="share" data-annotation="vertical-bubble" data-height="60"></div>
+      <script src="https://apis.google.com/js/platform.js" async defer>
+        {lang: 'en-US'}
+      </script>
+      <div class="g-plus" data-action="share" data-annotation="vertical-bubble"></div>
     </div>
   </div>
   <button class="btn btn-warning btn-lg" id="open-share-buttons">Share</button>

@@ -21,10 +21,9 @@ header {
   }
   .title {
     float: left;
-    margin-left: 20px;
+    margin: 30px 0 0 20px;
     font-weight: bold;
-    font-size: 3em;
-    margin-bottom: 0;
+    font-size: 2em;
   }
   .description {
     margin-left: 20px;
@@ -206,6 +205,10 @@ footer {
 
   .fb-share-button {
     top: -7px;
+  }
+
+  #___plus_1, #___plus_1 iframe, #___plus_0, #___plus_0 iframe {
+    width:72px !important;
   }
 
   .share-button {
