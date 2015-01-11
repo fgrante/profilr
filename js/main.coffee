@@ -34,7 +34,7 @@ $ ->
         <input type="text" value="'+link+'" class="form-control input-lg link-input">
       </div>
       <a href="'+link+'" target="_blank" class="btn btn-default btn-lg">
-        Ouvrir sur Google
+        Open on Google
         <i class="fa fa-external-link"></i>
       </a>
     ')
@@ -46,7 +46,7 @@ $ ->
           <input type="text" value="'+twitter_link+'" class="form-control input-lg link-input">
         </div>
         <a href="'+twitter_link+'" target="_blank" class="btn btn-default btn-lg">
-          Ouvrir sur Twitter
+          Open on Twitter
           <i class="fa fa-external-link"></i>
         </a>
       ')
@@ -57,7 +57,7 @@ $ ->
           <input type="text" value="'+github_link+'" class="form-control input-lg link-input">
         </div>
         <a href="'+github_link+'" target="_blank" class="btn btn-default btn-lg">
-          Ouvrir sur Github
+          Open on Github
           <i class="fa fa-external-link"></i>
         </a>
       ')
