@@ -122,7 +122,14 @@ $ ->
 
 $ ->
   $(".advanced_options_link a").click ->
-    $("#advanced_options").slideToggle()
+    if $("#advanced_options").is(":visible")
+      $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Date indifférente</span>')
+      window.date = 'undefined'
+      $("#exclude_input").val('')
+      $("#advanced_options").slideUp()
+      console.log "ok"
+    else
+      $("#advanced_options").slideDown()
 
 $ ->
   $("#open-share-buttons").click ->
