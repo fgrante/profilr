@@ -1,35 +1,14 @@
 <footer>
   Built by <a href="https://firmapi.com" target="_blank">Firmapi</a>. Any feedbacks? Drop us a line at <a href="mailto:bonjour@firmapi.com">bonjour@firmapi.com</a>!
   <br/>
-  <div id="share-buttons">
-    <div class="share-button">
-      <div id="fb-root"></div>
-      <script>(function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=785120568217551&version=v2.0";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));</script>
-      <div class="fb-share-button" data-href="{{ site.url }}" data-layout="box_count"></div>
-    </div>
 
-    <div class="share-button">
-      <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="_Firmapi" data-related="_Firmapi">Tweet</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    </div>
+  <div class="share-buttons">
+    <a class="icon-facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{ site.url }}','Partager sur Facebook','menubar=no, status=no, scrollbars=no, menubar=no, width=520, height=570');" id="facebook-btn" class="btn btn-fb social-btn"><i class="fa fa-facebook"></i></a>
 
-    <div class="share-button">
-      <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-      <script type="IN/Share" data-counter="top"></script>
-    </div>
+    <a class="icon-twitter onclick="window.open('https://twitter.com/intent/tweet?url={{ site.url }}&text=Find the best profiles on social medias with Profilr','Partager sur Twitter','menubar=no, status=no, scrollbars=no, menubar=no, width=520, height=570');" id="twitter-btn" class="btn btn-twitter social-btn"><i class="fa fa-twitter"></i></a>
 
-    <div class="share-button">
-      <script src="https://apis.google.com/js/platform.js" async defer>
-        {lang: 'en-US'}
-      </script>
-      <div class="g-plus" data-action="share" data-annotation="vertical-bubble"></div>
-    </div>
+    <a class="icon-linkedin" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}&title={{ CGI::escape(page.title) }}&summary={{ CGI::escape(page.description) }}&source={{ CGI::escape(site.title) }}', 'Partager sur LinkedIn','menubar=no, status=no, scrollbars=no, menubar=no, width=520, height=570');" id="linkedin-btn" class="btn btn-linkedin social-btn"><i class="fa fa-linkedin"></i></a>
+
+    <a class="icon-google-plus" onclick="window.open('https://plus.google.com/share?url={{ site.url }}', 'Partager sur Google+','menubar=no, status=no, scrollbars=no, menubar=no, width=520, height=570');" id="linkedin-btn" class="btn btn-googleplus social-btn"><i class="fa fa-google-plus"></i></a>
   </div>
-  <button class="btn btn-warning btn-lg" id="open-share-buttons">Share</button>
 </footer>

@@ -37,6 +37,10 @@ input, button, a, select {
   border-radius: 0 !important;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 .btn-primary, .btn-primary:focus  {
   background-color: #3699ee;
   border: 0;
@@ -208,34 +212,39 @@ footer {
     width: 300px;
   }
 
-  #share-buttons {
-    max-width: $main-width;
-    padding: 30px;
-    background-color: #fff;
-    border: 1px solid #eee;
-    margin: 40px auto;
-    display: none;
+  .share-buttons {
 
-    &:hover {
-      border-color: #ddd;
+    margin-top: 30px;
+
+    a {
+      color: #fff;
+      display: inline-block;
+      border-radius: 100px !important;
+      width: 50px;
+      height: 50px;
+      padding-top: 15px;
+      margin: 5px;
+
+      &:hover {
+        color: #fff;
+        border: 0;
+      }
     }
-  }
 
-  .share-button {
-    width: 400px;
-    text-align: center;
-  }
+    .icon-linkedin {
+      background-color: #007bb6;
+    }
 
-  .fb-share-button {
-    top: -7px;
-  }
+    .icon-twitter {
+      background-color: #4099FF;
+    }
 
-  #___plus_1, #___plus_1 iframe, #___plus_0, #___plus_0 iframe {
-    width:72px !important;
-  }
+    .icon-google-plus {
+      background-color: #d34836;
+    }
 
-  .share-button {
-    display: inline-block;
-    width: 70px;
+    .icon-facebook {
+      background-color: #3B5998;
+    }
   }
 }
