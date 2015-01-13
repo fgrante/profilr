@@ -104,7 +104,7 @@ $ ->
     window.date = 'undefined'
 
   $('#choose-day').click ->
-    $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Pas 24 hours</span>')
+    $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Past 24 hours</span>')
     window.date = 'qdr:d'
 
   $('#choose-week').click ->
