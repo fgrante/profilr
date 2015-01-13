@@ -100,30 +100,30 @@ window.date = 'undefined'
 
 $ ->
   $('#choose-no-date').click ->
-    $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Date indifférente</span>')
+    $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Any time</span>')
     window.date = 'undefined'
 
   $('#choose-day').click ->
-    $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Moins de 24 heures</span>')
+    $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Pas 24 hours</span>')
     window.date = 'qdr:d'
 
   $('#choose-week').click ->
-    $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Moins d\'une semaine</span>')
+    $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Past week</span>')
     window.date = 'qdr:w'
 
   $('#choose-month').click ->
-    $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Moins d\'un mois</span>')
+    $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Past month</span>')
     window.date = 'qdr:m'
 
   $('#choose-year').click ->
-    $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Moins d\'un an</span>')
+    $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Past year</span>')
     window.date = 'qdr:y'
 
 
 $ ->
   $(".advanced_options_link a").click ->
     if $("#advanced_options").is(":visible")
-      $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Date indifférente</span>')
+      $('#selected-date').html('<span class="social"><i class="fa fa-clock-o"></i>Any time</span>')
       window.date = 'undefined'
       $("#exclude_input").val('')
       $("#advanced_options").slideUp()
