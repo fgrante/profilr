@@ -3,12 +3,12 @@
   <br/>
 
   <div class="share-buttons">
-    <a class="icon-facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{ site.url }}','Partager sur Facebook','menubar=no, status=no, scrollbars=no, menubar=no, width=520, height=570');" id="facebook-btn" class="btn btn-fb social-btn"><i class="fa fa-facebook"></i></a>
+    <a class="icon-facebook" rel="tooltip" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{ site.url }}','Partager sur Facebook','menubar=no, status=no, scrollbars=no, menubar=no, width=520, height=570');" id="facebook-btn" class="btn btn-fb social-btn"><i class="fa fa-facebook"></i></a>
 
-    <a class="icon-twitter" onclick="window.open('https://twitter.com/intent/tweet?text=Find the best profiles on social medias with Profilr&url={{ site.url }}','Partager sur Twitter','menubar=no, status=no, scrollbars=no, menubar=no, width=520, height=570');" id="twitter-btn" class="btn btn-twitter social-btn"><i class="fa fa-twitter"></i></a>
+    <a class="icon-twitter" rel="tooltip" title="Share on Twitter" onclick="window.open('https://twitter.com/intent/tweet?text=Find the best profiles on social medias with Profilr&url={{ site.url }}','Partager sur Twitter','menubar=no, status=no, scrollbars=no, menubar=no, width=520, height=570');" id="twitter-btn" class="btn btn-twitter social-btn"><i class="fa fa-twitter"></i></a>
 
-    <a class="icon-linkedin" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}&title={{ CGI::escape(page.title) }}&summary={{ CGI::escape(page.description) }}&source={{ CGI::escape(site.title) }}', 'Partager sur LinkedIn','menubar=no, status=no, scrollbars=no, menubar=no, width=520, height=570');" id="linkedin-btn" class="btn btn-linkedin social-btn"><i class="fa fa-linkedin"></i></a>
+    <a class="icon-linkedin" rel="tooltip" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}&title={{ CGI::escape(page.title) }}&summary={{ CGI::escape(page.description) }}&source={{ CGI::escape(site.title) }}', 'Partager sur LinkedIn','menubar=no, status=no, scrollbars=no, menubar=no, width=520, height=570');" id="linkedin-btn" class="btn btn-linkedin social-btn"><i class="fa fa-linkedin"></i></a>
 
-    <a class="icon-google-plus" onclick="window.open('https://plus.google.com/share?url={{ site.url }}', 'Partager sur Google+','menubar=no, status=no, scrollbars=no, menubar=no, width=520, height=570');" id="linkedin-btn" class="btn btn-googleplus social-btn"><i class="fa fa-google-plus"></i></a>
+    <a class="icon-google-plus" rel="tooltip" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url={{ site.url }}', 'Partager sur Google+','menubar=no, status=no, scrollbars=no, menubar=no, width=520, height=570');" id="linkedin-btn" class="btn btn-googleplus social-btn"><i class="fa fa-google-plus"></i></a>
   </div>
 </footer>

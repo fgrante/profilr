@@ -213,6 +213,12 @@ $ ->
 
 
 #
+# Toltips
+#
+$ ->
+  $("[rel='tooltip']").tooltip()
+
+#
 # jQuery Cookie
 #
 ((factory) ->
