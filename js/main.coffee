@@ -19,6 +19,9 @@ $ ->
     else if window.social == 'github'
       query = 'site:github.com intext:&quot;joined on&quot; -intitle:&quot;at master&quot; -inurl:(tab|jobs|articles) '+$("#job_input").val()+' '+$("#company_input").val()+' &quot;'+$("#location_input").val()+'&quot;'
 
+    else if window.social == 'dribbble'
+      query = '-inurl:(jobs|highlights|shots|designers|teams|meetups|goods|projects|buckets|colors|tags|about|click|followers|following|likes) -site:&quot;blog.dribbble.com&quot; site:dribbble.com '+$("#job_input").val()+' '+$("#company_input").val()+' &quot;'+$("#location_input").val()+'&quot;'
+
     excluded_words = '-'+$("#exclude_input").val().split(" ").join(" -")
 
     if window.date != 'undefined'
@@ -26,7 +29,7 @@ $ ->
     else
       date = ''
 
-    link = 'https://google.com/search?q='+query+' '+excluded_words+'&num=100&pws=0'+date
+    link = 'https://google.com/search?q='+query+' '+excluded_words+'&num=100&pws=0&filter=0'+date
 
 
     $("#result1").html('
@@ -95,6 +98,9 @@ $ ->
     $('#selected-social').html('<span class="social"><i class="fa fa-github"></i>Github</span>')
     window.social = 'github'
 
+  $('#choose-dribbble').click ->
+    $('#selected-social').html('<span class="social"><i class="fa fa-dribbble"></i>Dribbble</span>')
+    window.social = 'dribbble'
 
 window.date = 'undefined'
 

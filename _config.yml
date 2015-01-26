@@ -1,7 +1,7 @@
 # Site settings
 title: Profilr
 email: francois@firmapi.com
-description: Find the best profiles on social networks instantly
+description: Profilr is the easiest way to find profiles on social media.
 baseurl:
 url: https://profilr.co
 twitter_username: _Firmapi
