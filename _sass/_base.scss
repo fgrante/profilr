@@ -47,6 +47,51 @@ header {
   }
 }
 
+.welcome-message {
+  display: none;
+  font-size: 1.3em;
+  margin: 0 0 40px 0;
+  background-color: #fff;
+  border: 1px solid #eee;
+  padding: 20px 30px;
+  text-align: left;
+
+  strong {
+    color: #333;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1.1em;
+  }
+
+  p {
+    color: #888;
+  }
+
+  a {
+    color: #888;
+    border-bottom: 1px dotted #888;
+
+    &:hover {
+      border-bottom: 1px solid #aaa;
+      text-decoration: none;
+    }
+  }
+
+  #close-onboarding {
+    color: #777;
+    float: right;
+    -webkit-transition: color .2s ease-in;
+    -moz-transition: color .2s ease-in;
+    -o-transition: color .2s ease-in;
+    transition: color .2s ease-in;
+
+    &:hover {
+      cursor: pointer;
+      color: #333;
+    }
+  }
+}
+
 input, button, a, select {
   border-radius: 0 !important;
 }
@@ -66,7 +111,7 @@ a:hover {
 
 form {
   max-width: $main-width;
-  margin: 50px auto;
+  margin: 40px auto;
 }
 
 input, .btn {
