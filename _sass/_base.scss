@@ -132,11 +132,6 @@ textarea:focus, input:focus, button:focus{
   padding: 16px 0;
 }
 
-.tip {
-  color: #999;
-  margin: 20px 0 60px 0;
-}
-
 .inner-icon {
     position: relative;
 }
@@ -308,6 +303,25 @@ footer {
 
     .icon-facebook {
       background-color: #3B5998;
+    }
+  }
+
+  .onboarding-link {
+    margin: 50px 0;
+    display: none;
+
+    a {
+    color: #aaa;
+
+      &:hover {
+        cursor: pointer;
+        border-bottom: 1px solid #bbb;
+      }
+
+      .fa-question-circle {
+        margin-right: 5px;
+        color: #bbb;
+      }
     }
   }
 }

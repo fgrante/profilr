@@ -9,7 +9,7 @@ $ ->
   $("#main_form").submit ->
 
     $("html, body").animate
-      scrollTop: $("#job_input").offset().top
+      scrollTop: $("#find_button").offset().top
     , "slow"
     false
 
@@ -201,7 +201,21 @@ $ ->
 $ ->
   $("#close-onboarding").click ->
     $(".welcome-message").hide ->
-      $.cookie("onboarding", "1", { expires: 60 });
+      $(".onboarding-link").show ->
+        $.cookie("onboarding", "1", { expires: 60 });
+
+
+#
+# On ferme l'onboarding
+#
+
+$ ->
+  $(".onboarding-link a").click ->
+    $(".welcome-message").show ->
+      $(".onboarding-link").hide ->
+        $.cookie("onboarding", null);
+
+
 
 #
 # Affichage de ou pas l'onboarding en fonction du cookie
@@ -213,10 +227,20 @@ $ ->
 
 
 #
+# Affichage du lien vers l'onboarding en fonction du cookie
+#
+
+$ ->
+  if $.cookie("onboarding") == "1"
+    $(".onboarding-link").show()
+
+
+#
 # Toltips
 #
 $ ->
   $("[rel='tooltip']").tooltip()
+
 
 #
 # jQuery Cookie
