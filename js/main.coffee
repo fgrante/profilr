@@ -13,32 +13,115 @@ $ ->
     , "slow"
     false
 
+    job = $("#job_input").val();
+    location = $("#location_input").val();
+    company = $("#company_input").val()
+
     if window.social == 'linkedin'
-      query = '-intitle:&quot;profiles&quot; -inurl:&quot;dir/ &quot; site:linkedin.com/in/ OR site:linkedin.com/pub/ '+$("#job_input").val()+' -intitle:&quot;'+$("#job_input").val()+'&quot; &quot;'+$("#company_input").val()+'&quot; &quot;'+$("#location_input").val()+'&quot;'
+      if job != ''
+        job_linkedin = ' &quot;'+job+'&quot; -intitle:&quot;'+job+'&quot'
+      else
+        job_linkedin = ''
+      if location != ''
+        location_linkedin = ' &quot;'+location+'&quot;'
+      else
+        location_linkedin = ''
+      if company != ''
+        company_linkedin = ' &quot;'+company+'&quot;'
+      else
+        company_linkedin = ''
+
+      query = '-intitle:&quot;profiles&quot; -inurl:&quot;dir/&quot; site:linkedin.com/in/ OR site:linkedin.com/pub/'+job_linkedin+''+location_linkedin+''+company_linkedin
 
     else if window.social == 'google-plus'
-      query = 'site:plus.google.com -inurl:&quot;app/basic/&quot; &quot;lives * '+$("#location_input").val()+'&quot; &quot;works at '+$("#company_input").val()+'&quot; -intext:&quot;Contact Information&quot; inurl:about '+$("#job_input").val()
+      if job != ''
+        job_google_plus = ' &quot;'+job+'&quot;'
+      else
+        job_google_plus = ''
+      if location != ''
+        location_google_plus = ' &quot;lives * '+location+'&quot;'
+      else
+        location_google_plus = ''
+      if company != ''
+        company_google_plus = ' &quot;works at '+company+'&quot;'
+      else
+        company_google_plus = ''
+
+      query = 'site:plus.google.com -inurl:&quot;app/basic/&quot; -intext:&quot;Contact Information&quot; intext:&quot;Basic Information&quot; -intitle:&quot;Basic Information&quot; inurl:about'+job_google_plus+''+location_google_plus+''+company_google_plus
 
     else if window.social == 'twitter'
-      query = '-inurl:(search|favorites|status|statuses|jobs|lists|media) site:twitter.com -intitle:&quot;'+$("#job_input").val()+'&quot; -intitle:&quot;'+$("#company_input").val()+'&quot; -intitle:&quot;'+$("#location_input").val()+'&quot; '+$("#job_input").val()+' &quot;'+$("#company_input").val()+'&quot; &quot;'+$("#location_input").val()
+      if job != ''
+        job_twitter = ' &quot;'+job+'&quot; -intitle:&quot;'+job+'&quot'
+      else
+        job_twitter = ''
+      if location != ''
+        location_twitter = ' &quot;'+location+'&quot; -intitle:&quot;'+location+'&quot;'
+      else
+        location_twitter = ''
+      if company != ''
+        company_twitter = ' &quot;'+company+'&quot; -intitle:&quot;'+company+'&quot;'
+      else
+        company_twitter = ''
+      query = '-inurl:(search|favorites|status|statuses|jobs|lists|media) site:twitter.com '+job_twitter+''+location_twitter+''+company_twitter
 
     else if window.social == 'viadeo'
-      query = 'site:viadeo.com/*/profile/ '+$("#job_input").val()+' intitle:&quot;'+$("#company_input").val()+'&quot; &quot;'+$("#location_input").val()+'&quot;'
+      if job != ''
+        job_viadeo = ' &quot;'+job+'&quot;'
+      else
+        job_viadeo = ''
+      if location != ''
+        location_viadeo = ' &quot;'+location+'&quot;'
+      else
+        location_viadeo = ''
+      if company != ''
+        company_viadeo = ' intitle:&quot;'+company+'&quot;'
+      else
+        company_viadeo = ''
+      query = 'site:viadeo.com/*/profile/'+job_viadeo+''+company_viadeo+''+location_viadeo
 
     else if window.social == 'github'
-      query = 'site:github.com intext:&quot;joined on&quot; -intitle:&quot;at master&quot; -inurl:(tab|jobs|articles) '+$("#job_input").val()+' '+$("#company_input").val()+' &quot;'+$("#location_input").val()+'&quot;'
+      if job != ''
+        job_github = ' &quot;'+job+'&quot;'
+      else
+        job_github = ''
+      if location != ''
+        location_github = ' &quot;'+location+'&quot;'
+      else
+        location_github = ''
+      if company != ''
+        company_github = ' &quot;'+company+'&quot;'
+      else
+        company_github = ''
+
+      query = 'site:github.com intext:&quot;joined on&quot; -intitle:&quot;at master&quot; -inurl:(tab|jobs|articles)'+job_github+''+company_github+''+location_github
 
     else if window.social == 'dribbble'
-      query = '-inurl:(jobs|highlights|shots|designers|teams|meetups|goods|projects|buckets|colors|tags|about|click|followers|following|likes|page) -site:&quot;blog.dribbble.com&quot; site:dribbble.com -intitle:&quot;'+$("#job_input").val()+'&quot; -intitle:&quot;'+$("#company_input").val()+'&quot; -intitle:&quot;'+$("#location_input").val()+'&quot; '+$("#job_input").val()+' '+$("#company_input").val()+' &quot;'+$("#location_input").val()+'&quot;'
+      if job != ''
+        job_dribbble = ' &quot;'+job+'&quot; -intitle:&quot;'+job+'&quot;'
+      else
+        job_dribbble = ''
+      if location != ''
+        location_dribbble = ' &quot;'+location+'&quot; -intitle:&quot;'+location+'&quot;'
+      else
+        location_dribbble = ''
+      if company != ''
+        company_dribbble = ' &quot;'+company+'&quot;'
+      else
+        company_dribbble = ''
 
-    excluded_words = '-'+$("#exclude_input").val().split(" ").join(" -")
+      query = '-inurl:(jobs|highlights|shots|designers|teams|meetups|goods|projects|buckets|colors|tags|about|click|followers|following|likes|page) -site:&quot;blog.dribbble.com&quot; site:dribbble.com'+job_dribbble+''+company_dribbble+''+location_dribbble
+
+    if $("#exclude_input").val() != ''
+      excluded_words = ' -'+$("#exclude_input").val().split(" ").join(" -")
+    else
+      excluded_words = ''
 
     if window.date != 'undefined'
       date = '&tbs='+window.date
     else
       date = ''
 
-    link = 'https://google.com/search?q='+query+' '+excluded_words+'&num=100&pws=0&filter=0'+date
+    link = 'https://google.com/search?q='+query+''+excluded_words+'&num=100&pws=0&filter=0'+date
 
 
     $("#result1").html('
@@ -50,31 +133,6 @@ $ ->
         <i class="fa fa-external-link"></i>
       </a>
     ')
-
-    if window.social == 'twitter'
-      twitter_link = 'https://twitter.com/search?mode=users&q='+$("#company_input").val()+' '+$("#location_input").val()
-      $("#result2").html('
-        <div class="form-group">
-          <input type="text" value="'+twitter_link+'" class="form-control input-lg link-input">
-        </div>
-        <a href="'+twitter_link+'" target="_blank" class="btn btn-default btn-lg">
-          Open on Twitter
-          <i class="fa fa-external-link"></i>
-        </a>
-      ')
-    else if window.social == 'github'
-      github_link = 'https://github.com/search?l='+$("#job_input").val()+'&q=location%3A&quot;'+$("#location_input").val()+'&quot; '+$("#company_input").val()+'&ref=advsearch&type=Users&utf8=%E2%9C%93'
-      $("#result2").html('
-        <div class="form-group">
-          <input type="text" value="'+github_link+'" class="form-control input-lg link-input">
-        </div>
-        <a href="'+github_link+'" target="_blank" class="btn btn-default btn-lg">
-          Open on Github
-          <i class="fa fa-external-link"></i>
-        </a>
-      ')
-    else
-      $("#result2").html('')
 
     $(".link-input").click ->
       $(this).select()
