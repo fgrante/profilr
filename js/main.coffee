@@ -13,6 +13,9 @@ $ ->
     , "slow"
     false
 
+    # Send the event on Analytics
+    ga('send', 'event', 'button', 'click', 'generate_search', 1);
+
     job = $("#job_input").val();
     location = $("#location_input").val();
     company = $("#company_input").val()
