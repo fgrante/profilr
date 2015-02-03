@@ -127,6 +127,12 @@ textarea:focus, input:focus, button:focus{
     outline: 0 !important;
 }
 
+label {
+  width: 100%;
+  text-align: left;
+  font-size: 1.1em;
+}
+
 #find_button {
   width: 100%;
   padding: 16px 0;

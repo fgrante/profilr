@@ -16,25 +16,29 @@ layout: default
       </ul>
     </div>
     <div class="form-group">
+      <label for="job_input">Job or skill</label>
       <div class="inner-icon">
         <i class="fa fa-briefcase"></i>
-        <input type="text" class="form-control input-lg" id="job_input" placeholder="Job or skill">
+        <input type="text" class="form-control input-lg" id="job_input" placeholder="SEO" />
       </div>
     </div>
     <div class="form-group">
+      <label for="company_input">Company</label>
       <div class="inner-icon">
         <i class="fa fa-building-o"></i>
-        <input type="text" class="form-control input-lg" id="company_input" placeholder="Company">
+        <input type="text" class="form-control input-lg" id="company_input" placeholder="Google" />
       </div>
     </div>
     <div class="form-group">
+      <label for="location_input">Location</label>
       <div class="inner-icon">
         <i class="fa fa-map-marker"></i>
-        <input type="text" class="form-control input-lg" id="location_input" placeholder="Location">
+        <input type="text" class="form-control input-lg" id="location_input" placeholder="Paris" />
       </div>
     </div>
     <div class="form-group">
-      <div class="dropdown">
+      <label for="social_dropdown">Social network</label>
+      <div class="dropdown" id="social_dropdown">
         <button id="choose-social" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-default btn-lg">
           <span class="caret"></span>
           <span id="selected-social"><span class="social"><i class="fa fa-linkedin"></i>LinkedIn</span></span>
@@ -84,14 +88,16 @@ layout: default
     </div>
     <div id="advanced_options">
       <div class="form-group">
+        <label for="exclude_input">Keywords to exclude (space-separated)</label>
         <div class="inner-icon">
           <i class="fa fa-minus-circle"></i>
-          <input type="text" class="form-control input-lg" id="exclude_input" placeholder="Keywords to exclude (space separated)">
+          <input type="text" class="form-control input-lg" id="exclude_input" placeholder="Freelance">
         </div>
       </div>
       <div class="form-group">
+        <label for="time_dropdown">Last update</label>
         <div class="dropdown">
-          <button id="choose-social" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-default btn-lg">
+          <button id="choose-time" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-default btn-lg">
             <span class="caret"></span>
             <span id="selected-date"><span class="social"><i class="fa fa-clock-o"></i>Any time</span></span>
           </button>
