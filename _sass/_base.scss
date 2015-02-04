@@ -136,6 +136,11 @@ label {
 #find_button {
   width: 100%;
   padding: 16px 0;
+
+  .fa-external-link {
+    font-size: 0.8em;
+    margin-left: 5px;
+  }
 }
 
 .dropdown button {
@@ -203,20 +208,6 @@ label {
 
 .inner-icon .fa-map-marker {
   left: 20px;
-}
-
-#result1 {
-  margin-top: 20px;
-
-  .btn {
-    font-weight: bold;
-  }
-
-  .fa-external-link {
-    font-size: 0.8em;
-    margin-left: 5px;
-    color: #888;
-  }
 }
 
 .advanced_options_link {

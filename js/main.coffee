@@ -7,12 +7,6 @@
 
 $ ->
   $("#main_form").submit ->
-
-    $("html, body").animate
-      scrollTop: $("#find_button").offset().top
-    , "slow"
-    false
-
     # Send the event on Analytics
     ga('send', 'event', 'button', 'click', 'generate_search', 1);
 
@@ -22,97 +16,97 @@ $ ->
 
     if window.social == 'linkedin'
       if job != ''
-        job_linkedin = ' &quot;'+job+'&quot; -intitle:&quot;'+job+'&quot'
+        job_linkedin = ' "'+job+'" -intitle:"'
       else
         job_linkedin = ''
       if location != ''
-        location_linkedin = ' &quot;'+location+'&quot;'
+        location_linkedin = ' "'+location+'"'
       else
         location_linkedin = ''
       if company != ''
-        company_linkedin = ' &quot;'+company+'&quot;'
+        company_linkedin = ' "'+company+'"'
       else
         company_linkedin = ''
 
-      query = '-intitle:&quot;profiles&quot; -inurl:&quot;dir/&quot; site:linkedin.com/in/ OR site:linkedin.com/pub/'+job_linkedin+''+location_linkedin+''+company_linkedin
+      query = '-intitle:"profiles" -inurl:"dir/" site:linkedin.com/in/ OR site:linkedin.com/pub/'+job_linkedin+''+location_linkedin+''+company_linkedin
 
     else if window.social == 'google-plus'
       if job != ''
-        job_google_plus = ' &quot;'+job+'&quot;'
+        job_google_plus = ' "'+job+'"'
       else
         job_google_plus = ''
       if location != ''
-        location_google_plus = ' &quot;lives * '+location+'&quot;'
+        location_google_plus = ' "lives * '+location+'"'
       else
         location_google_plus = ''
       if company != ''
-        company_google_plus = ' &quot;works at '+company+'&quot;'
+        company_google_plus = ' "works at '+company+'"'
       else
         company_google_plus = ''
 
-      query = 'site:plus.google.com -inurl:&quot;app/basic/&quot; -intext:&quot;Contact Information&quot; intext:&quot;Basic Information&quot; -intitle:&quot;Basic Information&quot; inurl:about'+job_google_plus+''+location_google_plus+''+company_google_plus
+      query = 'site:plus.google.com -inurl:"app/basic/" -intext:"Contact Information" intext:"Basic Information" -intitle:"Basic Information" inurl:about'+job_google_plus+''+location_google_plus+''+company_google_plus
 
     else if window.social == 'twitter'
       if job != ''
-        job_twitter = ' &quot;'+job+'&quot; -intitle:&quot;'+job+'&quot'
+        job_twitter = ' "'+job+'" -intitle:"'+job+'&quot'
       else
         job_twitter = ''
       if location != ''
-        location_twitter = ' &quot;'+location+'&quot; -intitle:&quot;'+location+'&quot;'
+        location_twitter = ' "'+location+'" -intitle:"'+location+'"'
       else
         location_twitter = ''
       if company != ''
-        company_twitter = ' &quot;'+company+'&quot; -intitle:&quot;'+company+'&quot;'
+        company_twitter = ' "'+company+'" -intitle:"'+company+'"'
       else
         company_twitter = ''
       query = '-inurl:(search|favorites|status|statuses|jobs|lists|media) site:twitter.com '+job_twitter+''+location_twitter+''+company_twitter
 
     else if window.social == 'viadeo'
       if job != ''
-        job_viadeo = ' &quot;'+job+'&quot;'
+        job_viadeo = ' "'+job+'"'
       else
         job_viadeo = ''
       if location != ''
-        location_viadeo = ' &quot;'+location+'&quot;'
+        location_viadeo = ' "'+location+'"'
       else
         location_viadeo = ''
       if company != ''
-        company_viadeo = ' intitle:&quot;'+company+'&quot;'
+        company_viadeo = ' intitle:"'+company+'"'
       else
         company_viadeo = ''
       query = 'site:viadeo.com/*/profile/'+job_viadeo+''+company_viadeo+''+location_viadeo
 
     else if window.social == 'github'
       if job != ''
-        job_github = ' &quot;'+job+'&quot;'
+        job_github = ' "'+job+'"'
       else
         job_github = ''
       if location != ''
-        location_github = ' &quot;'+location+'&quot;'
+        location_github = ' "'+location+'"'
       else
         location_github = ''
       if company != ''
-        company_github = ' &quot;'+company+'&quot;'
+        company_github = ' "'+company+'"'
       else
         company_github = ''
 
-      query = 'site:github.com intext:&quot;joined on&quot; -intitle:&quot;at master&quot; -inurl:(tab|jobs|articles)'+job_github+''+company_github+''+location_github
+      query = 'site:github.com intext:"joined on" -intitle:"at master" -inurl:(tab|jobs|articles)'+job_github+''+company_github+''+location_github
 
     else if window.social == 'dribbble'
       if job != ''
-        job_dribbble = ' &quot;'+job+'&quot; -intitle:&quot;'+job+'&quot;'
+        job_dribbble = ' "'+job+'" -intitle:"'+job+'"'
       else
         job_dribbble = ''
       if location != ''
-        location_dribbble = ' &quot;'+location+'&quot; -intitle:&quot;'+location+'&quot;'
+        location_dribbble = ' "'+location+'" -intitle:"'+location+'"'
       else
         location_dribbble = ''
       if company != ''
-        company_dribbble = ' &quot;'+company+'&quot;'
+        company_dribbble = ' "'+company+'"'
       else
         company_dribbble = ''
 
-      query = '-inurl:(jobs|highlights|shots|designers|teams|meetups|goods|projects|buckets|colors|tags|about|click|followers|following|likes|page) -site:&quot;blog.dribbble.com&quot; site:dribbble.com'+job_dribbble+''+company_dribbble+''+location_dribbble
+      query = '-inurl:(jobs|highlights|shots|designers|teams|meetups|goods|projects|buckets|colors|tags|about|click|followers|following|likes|page) -site:"blog.dribbble.com" site:dribbble.com'+job_dribbble+''+company_dribbble+''+location_dribbble
 
     if $("#exclude_input").val() != ''
       excluded_words = ' -'+$("#exclude_input").val().split(" ").join(" -")
@@ -126,19 +120,7 @@ $ ->
 
     link = 'https://google.com/search?q='+query+''+excluded_words+'&num=100&pws=0&filter=0'+date
 
-
-    $("#result1").html('
-      <div class="form-group">
-        <input type="text" value="'+link+'" class="form-control input-lg link-input">
-      </div>
-      <a href="'+link+'" target="_blank" class="btn btn-default btn-lg">
-        Open on Google
-        <i class="fa fa-external-link"></i>
-      </a>
-    ')
-
-    $(".link-input").click ->
-      $(this).select()
+    window.open(link, '_blank');
 
     return false
 
@@ -232,6 +214,7 @@ $ ->
 
 $ ->
   $("#example1").click ->
+    scrollBottom()
     $("#job_input").val("ruby (developer|software engineer)")
     $("#company_input").val("")
     $("#location_input").val("san francisco")
@@ -240,6 +223,7 @@ $ ->
 
 $ ->
   $("#example2").click ->
+    scrollBottom()
     $("#job_input").val("")
     $("#company_input").val("google")
     $("#location_input").val("")
@@ -248,11 +232,18 @@ $ ->
 
 $ ->
   $("#example3").click ->
+    scrollBottom()
     $("#job_input").val("")
     $("#company_input").val("")
     $("#location_input").val("berlin")
     $('#selected-social').html('<span class="social"><i class="fa fa-dribbble"></i>Dribbble</span>')
     window.social = 'dribbble'
+
+scrollBottom = ->
+  $("html, body").animate
+    scrollTop: $("#job_input").offset().top
+  , 300
+  false
 
 
 #
