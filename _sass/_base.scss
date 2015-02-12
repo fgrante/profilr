@@ -119,12 +119,12 @@ input, .btn {
 }
 
 .input-lg {
-  padding: 24px;
   font-size: 1.3em;
+  color: #333;
 }
 
 textarea:focus, input:focus, button:focus{
-    outline: 0 !important;
+  outline: 0 !important;
 }
 
 label {
