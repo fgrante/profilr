@@ -16,7 +16,7 @@ $ ->
 
     if window.social == 'linkedin'
       if job != ''
-        job_linkedin = ' "'+job+'" -intitle:"'
+        job_linkedin = ' "'+job+'"'
       else
         job_linkedin = ''
       if location != ''
@@ -48,7 +48,7 @@ $ ->
 
     else if window.social == 'twitter'
       if job != ''
-        job_twitter = ' "'+job+'" -intitle:"'+job+'&quot'
+        job_twitter = ' "'+job+'" -intitle:"'+job+'"'
       else
         job_twitter = ''
       if location != ''
