@@ -1,21 +1,7 @@
 body {
-  font-family: "proxima-nova";
+  font-family: "Open Sans";
   background-color: #f5f5f5;
   text-align: center;
-}
-
-::-webkit-scrollbar {
-    width: 15px;
-}
-::-webkit-scrollbar-track {
-    background-color: #eaeaea;
-    border-left: 1px solid #ccc;
-}
-::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-}
-::-webkit-scrollbar-thumb:hover {
-    background-color: #aaa;
 }
 
 header {
@@ -37,19 +23,21 @@ header {
     float: left;
     margin: 30px 0 0 20px;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1.7em;
+    line-height: 1.2em;
   }
   .description {
     margin-left: 20px;
     float: left;
-    font-size: 1.3em;
+    font-size: 1.2em;
     color: #888;
   }
 }
 
 .welcome-message {
   display: none;
-  font-size: 1.3em;
+  font-size: 1.1em;
+  line-height: 1.5em;
   margin: 0 0 40px 0;
   background-color: #fff;
   border: 1px solid #eee;
@@ -64,12 +52,12 @@ header {
   }
 
   p {
-    color: #888;
+    color: #777;
   }
 
   a {
-    color: #888;
-    border-bottom: 1px dotted #888;
+    color: #777;
+    border-bottom: 1px dotted #777;
 
     &:hover {
       border-bottom: 1px solid #aaa;
@@ -80,10 +68,7 @@ header {
   #close-onboarding {
     color: #777;
     float: right;
-    -webkit-transition: color .2s ease-in;
-    -moz-transition: color .2s ease-in;
-    -o-transition: color .2s ease-in;
-    transition: color .2s ease-in;
+    transition: color .1s ease-in;
 
     &:hover {
       cursor: pointer;
@@ -119,10 +104,18 @@ input, .btn {
 }
 
 .input-lg {
-  font-size: 1.3em;
+  font-size: 1.1em;
   color: #333;
   height: 48px;
   padding: 10px 12px;
+
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #bbb;
+  }
+
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: #bbb;
+  }
 }
 
 textarea:focus, input:focus, button:focus{
@@ -132,7 +125,6 @@ textarea:focus, input:focus, button:focus{
 label {
   width: 100%;
   text-align: left;
-  font-size: 1.1em;
 }
 
 #find_button {
@@ -237,16 +229,18 @@ label {
 
 footer {
   margin: 30px 0 80px 0;
-  font-size: 1.3em;
-  color: #666;
+  font-size: 1.1em;
+  line-height: 1.8em;
+  color: #aaa;
 
   a {
-    color: #3699ee;
+    text-decoration: underline; 
+    color: #aaa;
 
-    &:hover {
-      color: #3699ee;
-      border-bottom: 1px solid #3699ee;
-      text-decoration: none;
+    &:hover,
+    &:focus,
+    &:active {
+      color: #aaa;
     }
   }
 
@@ -255,53 +249,13 @@ footer {
     width: 300px;
   }
 
-  .share-buttons {
-
-    margin-top: 30px;
-
-    a {
-      color: #fff;
-      display: inline-block;
-      border-radius: 100px !important;
-      width: 50px;
-      height: 50px;
-      padding-top: 15px;
-      margin: 5px;
-
-      &:hover {
-        color: #fff;
-        border: 0;
-      }
-    }
-
-    .icon-linkedin {
-      background-color: #007bb6;
-    }
-
-    .icon-twitter {
-      background-color: #4099FF;
-    }
-
-    .icon-google-plus {
-      background-color: #d34836;
-    }
-
-    .icon-facebook {
-      background-color: #3B5998;
-    }
-  }
-
   .onboarding-link {
     margin: 50px 0;
     display: none;
+    font-size: 1.1em;
 
     a {
-    color: #aaa;
-
-      &:hover {
-        cursor: pointer;
-        border-bottom: 1px solid #bbb;
-      }
+      color: #aaa;
 
       .fa-question-circle {
         margin-right: 5px;

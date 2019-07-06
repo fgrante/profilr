@@ -202,10 +202,6 @@ $ ->
     else
       $("#advanced_options").slideDown()
 
-$ ->
-  $("#open-share-buttons").click ->
-    $("#share-buttons").slideToggle()
-
 
 #
 # Show examples
@@ -222,15 +218,6 @@ $ ->
 
 $ ->
   $("#example2").click ->
-    scrollBottom()
-    $("#job_input").val("")
-    $("#company_input").val("google")
-    $("#location_input").val("")
-    $('#selected-social').html('<span class="social"><i class="fa fa-google-plus"></i>Google+</span>')
-    window.social = 'google-plus'
-
-$ ->
-  $("#example3").click ->
     scrollBottom()
     $("#job_input").val("")
     $("#company_input").val("")

@@ -8,3 +8,6 @@ twitter_username: EmailHunter
 
 # Build settings
 markdown: kramdown
+
+plugins:
+  - jekyll-coffeescript
