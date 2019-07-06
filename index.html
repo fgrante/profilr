@@ -4,67 +4,129 @@ layout: default
 
 <div class="container">
   <form id="main_form">
-    <div class="form-group">
-      <div class="inner-icon">
-        <i class="fa fa-briefcase"></i>
-        <input type="text" class="form-control input-lg" autofocus="autofocus" id="job_input" placeholder="Poste ou compétence">
-      </div>
-      <div class="tip">Astuce : utilisez le séparateur OR pour rechercher plusieurs alternatives.</div>
+    <div class="welcome-message">
+      <div id="close-onboarding"><i class="fa fa-close"></i></div>
+      <p><strong>Welcome on Profilr!</strong></p>
+      <p>Profilr helps you to find thousands of profiles on social networks corresponding to your criteria. Complete your criteria, choose the social network you want to search in and Profilr generates an advanced search on Google to list all the profiles.</p>
+      <p>Examples:</p>
+      <ul>
+        <li><a id="example1">Ruby developers in San Francisco on Linkedin</a></li>
+        <li><a id="example2">People working at Google on Google+</a></li>
+        <li><a id="example3">Designers in Berlin on Dribbble</a></li>
+      </ul>
     </div>
     <div class="form-group">
-      <div class="inner-icon">
-        <i class="fa fa-building-o"></i>
-        <input type="text" class="form-control input-lg" id="company_input" placeholder="Entreprise">
-      </div>
+      <label for="job_input">Job or skill</label>
+      <input type="text" class="form-control input-lg" id="job_input" placeholder="SEO" />
     </div>
     <div class="form-group">
-      <div class="inner-icon">
-        <i class="fa fa-map-marker"></i>
-        <input type="text" class="form-control input-lg" id="localisation_input" placeholder="Localisation">
-      </div>
+      <label for="company_input">Company</label>
+      <input type="text" class="form-control input-lg" id="company_input" placeholder="Google" />
     </div>
     <div class="form-group">
-      <div class="dropdown">
+      <label for="location_input">Location</label>
+      <input type="text" class="form-control input-lg" id="location_input" placeholder="Paris" />
+    </div>
+    <div class="form-group">
+      <label for="social_dropdown">Social network</label>
+      <div class="dropdown" id="social_dropdown">
         <button id="choose-social" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-default btn-lg">
-          <span id="selected-social"><span class="social"><i class="fa fa-linkedin"></i>LinkedIn</span></span>
           <span class="caret"></span>
+          <span id="selected-social"><span class="social"><i class="fa fa-linkedin"></i>LinkedIn</span></span>
         </button>
         <ul class="dropdown-menu" role="menu" aria-labelledby="choose-social">
           <li>
-            <a href="#" class="social" id="choose-linkedin">
+            <a class="social" id="choose-linkedin">
               <i class="fa fa-linkedin"></i>
               LinkedIn
             </a>
           </li>
           <li>
-            <a href="#" class="social" id="choose-google-plus">
+            <a class="social" id="choose-google-plus">
               <i class="fa fa-google-plus"></i>
               Google+
             </a>
           </li>
           <li>
-            <a href="#" class="social" id="choose-viadeo">
+            <a class="social" id="choose-viadeo">
               <i class="el-icon-viadeo"></i>
               Viadeo
             </a>
           </li>
           <li>
-            <a href="#" class="social" id="choose-twitter">
+            <a class="social" id="choose-twitter">
               <i class="fa fa-twitter"></i>
               Twitter
             </a>
           </li>
           <li>
-            <a href="#" class="social" id="choose-github">
+            <a class="social" id="choose-github">
               <i class="fa fa-github"></i>
               Github
+            </a>
+          </li>
+          <li>
+            <a class="social" id="choose-dribbble">
+              <i class="fa fa-dribbble"></i>
+              Dribbble
             </a>
           </li>
         </ul>
       </div>
     </div>
-    <button type="submit" class="btn btn-primary btn-lg" id="find_button">Rechercher les profils</button>
-    <div id="result1"></div>
-    <div id="result2"></div>
+    <div class="advanced_options_link">
+      <a>Advanced options</a>
+    </div>
+    <div id="advanced_options">
+      <div class="form-group">
+        <label for="exclude_input">Keywords to exclude (space-separated)</label>
+        <input type="text" class="form-control input-lg" id="exclude_input" placeholder="Freelance">
+      </div>
+      <div class="form-group">
+        <label for="time_dropdown">Last update</label>
+        <div class="dropdown">
+          <button id="choose-time" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-default btn-lg">
+            <span class="caret"></span>
+            <span id="selected-date"><span class="social"><i class="fa fa-clock-o"></i>Any time</span></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="choose-social">
+            <li>
+              <a class="social" id="choose-no-date">
+                <i class="fa fa-clock-o"></i>
+                Any time
+              </a>
+            </li>
+            <li>
+              <a class="social" id="choose-day">
+                <i class="fa fa-clock-o"></i>
+                Past 24 hours
+              </a>
+            </li>
+            <li>
+              <a class="social" id="choose-week">
+                <i class="fa fa-clock-o"></i>
+                Past week
+              </a>
+            </li>
+            <li>
+              <a class="social" id="choose-month">
+                <i class="fa fa-clock-o"></i>
+                Past month
+              </a>
+            </li>
+            <li>
+              <a class="social" id="choose-year">
+                <i class="fa fa-clock-o"></i>
+                Past year
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg" id="find_button">
+      Find profiles
+      <i class="fa fa-external-link"></i>
+    </button>
   </form>
 </div>
